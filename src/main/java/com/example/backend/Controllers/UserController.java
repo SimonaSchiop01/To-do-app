@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/users")
@@ -22,6 +23,11 @@ public class UserController {
     @GetMapping("get_all")
     public List<User> getAllUsers(){
         return this.userRepository.findAll();
+    }
+
+    @GetMapping("{email}")
+    public Optional<User> findByEmail(String email){
+        return this.userRepository.findByEmail(email);
     }
 
 }
