@@ -24,6 +24,7 @@ public class User{
     @Column(nullable = false, unique=false, length=50)
     private String password;
 
+
     public Long getId() {
         return id;
     }

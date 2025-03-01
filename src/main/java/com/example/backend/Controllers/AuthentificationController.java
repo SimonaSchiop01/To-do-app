@@ -28,8 +28,8 @@ public class AuthentificationController {
     @PostMapping("GeneratePairsOfTokens")
     public BearerTokensDtoResponse loginUser(RequestTokensDto requestTokensDto) {
         User user = this.userRepository.findByEmailAndPassword(requestTokensDto.getEmail(), requestTokensDto.getPassword()).orElse(null);
-        if(user == null) {
-            return new BearerTokensDtoResponse("","","Wrong credentials",401);
+        if(user == null ) {
+            return new BearerTokensDtoResponse("","","Wrong credentials or inactive account",401);
         }
         BearerTokensGenerator generator = new BearerTokensGenerator();
         String accessToken = generator.generateAccessToken(user.getEmail());
@@ -51,6 +51,12 @@ public class AuthentificationController {
     public BearerTokensDtoResponse refreshToken(RequestNewPairsOfTokens  requestNewPairsOfTokens) {
         UserLoginHistory userLoginHistory = this.userLoginHistoryRepository.findByCurrentRefreshToken(requestNewPairsOfTokens.getRefreshToken()).orElse(null);
        if(userLoginHistory == null) {
+           User newUser = this.userRepository.findByEmail(requestNewPairsOfTokens.getUserEmail()).orElse(null);
+           if(newUser!=null)
+           {
+              // newUser.setInactive(true);
+               this.userRepository.save(newUser);
+           }
            return new BearerTokensDtoResponse("","","Your account was corrupted , we will freeze it temporary",401);
        }
        BearerTokensGenerator generator = new BearerTokensGenerator();

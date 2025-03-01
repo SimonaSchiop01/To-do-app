@@ -6,7 +6,16 @@ import lombok.Setter;
 
 public class RequestNewPairsOfTokens {
 
+    private String userEmail;
+
     private String refreshToken;
+
+    public String getUserEmail() {
+        return userEmail;
+    }
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
 
     public String getRefreshToken() {
         return refreshToken;

@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/users")
+@CrossOrigin(origins = "http://localhost:5173", maxAge = 3600)
 public class UserController {
     @Autowired
     private UserRepository userRepository;

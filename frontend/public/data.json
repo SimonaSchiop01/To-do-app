@@ -1,0 +1,237 @@
+{
+    "tasks": [
+      {
+        "title": "Open",
+        "status": "open",
+        "icon": "AssignmentLateIcon",
+        "iconColor": "#1976d2",
+        "tasks": [
+          {
+            "id": "task-1",
+            "title": "The Great Task Escape",
+            "description": "A mission so urgent that even time itself is afraid of it.",
+            "dueDate": "2025-03-01",
+            "assignee": {
+              "name": "Alice Smith",
+              "avatar": "https://via.placeholder.com/40"
+            }
+          },
+          {
+            "id": "task-5",
+            "title": "The Procrastination Showdown",
+            "description": "Can you finish this task, or will it just sit there? (Spoiler: It probably will.)",
+            "dueDate": "2025-03-05",
+            "assignee": {
+              "name": "Bob Johnson",
+              "avatar": "https://via.placeholder.com/40"
+            }
+          },
+          {
+            "id": "task-9",
+            "title": "The Pending Legend",
+            "description": "One does not simply complete this task in one go.",
+            "dueDate": "2025-03-09",
+            "assignee": {
+              "name": "Charlie Brown",
+              "avatar": "https://via.placeholder.com/40"
+            }
+          },
+          {
+            "id": "task-10",
+            "title": "Overdue but Overrated",
+            "description": "Technically late, but still relevant (probably).",
+            "dueDate": "2025-03-10",
+            "assignee": {
+              "name": "Dana White",
+              "avatar": "https://via.placeholder.com/40"
+            }
+          },
+          {
+            "id": "task-11",
+            "title": "Deadline Dilemma",
+            "description": "What if deadlines were suggestions? Asking for a friend.",
+            "dueDate": "2025-03-11",
+            "assignee": {
+              "name": "Eva Green",
+              "avatar": "https://via.placeholder.com/40"
+            }
+          }
+        ]
+      },
+      {
+        "title": "In Progress",
+        "status": "in-progress",
+        "icon": "HourglassEmptyIcon",
+        "iconColor": "#f57c00",
+        "tasks": [
+          {
+            "id": "task-2",
+            "title": "Halfway to Glory",
+            "description": "This task is 50% done... Which is basically just a fancy way to say 50% lazy.",
+            "dueDate": "2025-03-02",
+            "assignee": {
+              "name": "Charlie Brown",
+              "avatar": "https://via.placeholder.com/40"
+            }
+          },
+          {
+            "id": "task-6",
+            "title": "Feature-tastic Development",
+            "description": "Like a cake that's still in the oven, but somehow delicious anyway.",
+            "dueDate": "2025-03-06",
+            "assignee": {
+              "name": "Dana White",
+              "avatar": "https://via.placeholder.com/40"
+            }
+          },
+          {
+            "id": "task-12",
+            "title": "Debugging the Unknown",
+            "description": "It worked yesterday. Today? Not so much.",
+            "dueDate": "2025-03-12",
+            "assignee": {
+              "name": "Frank Ocean",
+              "avatar": "https://via.placeholder.com/40"
+            }
+          },
+          {
+            "id": "task-13",
+            "title": "Fixing That One Bug",
+            "description": "The one that everyone avoids. Yeah, that one.",
+            "dueDate": "2025-03-13",
+            "assignee": {
+              "name": "Grace Hopper",
+              "avatar": "https://via.placeholder.com/40"
+            }
+          },
+          {
+            "id": "task-14",
+            "title": "Almost There",
+            "description": "So close, yet so many distractions.",
+            "dueDate": "2025-03-14",
+            "assignee": {
+              "name": "Henry Ford",
+              "avatar": "https://via.placeholder.com/40"
+            }
+          }
+        ]
+      },
+      {
+        "title": "Completed",
+        "status": "completed",
+        "icon": "CheckCircleIcon",
+        "iconColor": "#388e3c",
+        "tasks": [
+          {
+            "id": "task-3",
+            "title": "Taskmaster Supreme",
+            "description": "Victory is sweet, and so is this task—completed with style.",
+            "dueDate": "2025-03-03",
+            "assignee": {
+              "name": "Eva Green",
+              "avatar": "https://via.placeholder.com/40"
+            }
+          },
+          {
+            "id": "task-7",
+            "title": "Bug Fixes and Pizza Slices",
+            "description": "Just like fixing a bug, it takes time. But pizza makes everything better.",
+            "dueDate": "2025-03-07",
+            "assignee": {
+              "name": "Frank Ocean",
+              "avatar": "https://via.placeholder.com/40"
+            }
+          },
+          {
+            "id": "task-15",
+            "title": "Mission Accomplished",
+            "description": "It wasn't easy, but it was worth it!",
+            "dueDate": "2025-03-15",
+            "assignee": {
+              "name": "Grace Hopper",
+              "avatar": "https://via.placeholder.com/40"
+            }
+          },
+          {
+            "id": "task-16",
+            "title": "Finally Done",
+            "description": "Feels good to check this one off!",
+            "dueDate": "2025-03-16",
+            "assignee": {
+              "name": "Henry Ford",
+              "avatar": "https://via.placeholder.com/40"
+            }
+          },
+          {
+            "id": "task-17",
+            "title": "Wrapped Up Nicely",
+            "description": "All done! On to the next big thing.",
+            "dueDate": "2025-03-17",
+            "assignee": {
+              "name": "Alice Smith",
+              "avatar": "https://via.placeholder.com/40"
+            }
+          }
+        ]
+      },
+      {
+        "title": "Rejected",
+        "status": "rejected",
+        "icon": "CancelIcon",
+        "iconColor": "#d32f2f",
+        "tasks": [
+          {
+            "id": "task-4",
+            "title": "Oops, We Tried!",
+            "description": "Well, it was a good idea until it wasn’t. Let’s move on.",
+            "dueDate": "2025-03-04",
+            "assignee": {
+              "name": "Grace Hopper",
+              "avatar": "https://via.placeholder.com/40"
+            }
+          },
+          {
+            "id": "task-8",
+            "title": "Back to Square One",
+            "description": "You win some, you lose some. And then you rework the whole idea.",
+            "dueDate": "2025-03-08",
+            "assignee": {
+              "name": "Henry Ford",
+              "avatar": "https://via.placeholder.com/40"
+            }
+          },
+          {
+            "id": "task-18",
+            "title": "The Unapproved Project",
+            "description": "Good effort, but let’s rethink this.",
+            "dueDate": "2025-03-18",
+            "assignee": {
+              "name": "Alice Smith",
+              "avatar": "https://via.placeholder.com/40"
+            }
+          },
+          {
+            "id": "task-19",
+            "title": "Canceled Before It Began",
+            "description": "Didn’t even stand a chance.",
+            "dueDate": "2025-03-19",
+            "assignee": {
+              "name": "Bob Johnson",
+              "avatar": "https://via.placeholder.com/40"
+            }
+          },
+          {
+            "id": "task-20",
+            "title": "Rework Required",
+            "description": "Not quite there yet.",
+            "dueDate": "2025-03-20",
+            "assignee": {
+              "name": "Charlie Brown",
+              "avatar": "https://via.placeholder.com/40"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  
