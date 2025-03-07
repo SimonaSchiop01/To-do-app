@@ -49,7 +49,7 @@ public class UserLoginHistory {
     }
 
     public void setCurrentAccessToken(String currentAccessToken) {
-        currentAccessToken = currentAccessToken;
+        this.currentAccessToken = currentAccessToken;
     }
 
     public String getCurrentRefreshToken() {
@@ -57,6 +57,6 @@ public class UserLoginHistory {
     }
 
     public void setCurrentRefreshToken(String currentRefreshToken) {
-        currentRefreshToken = currentRefreshToken;
+        this.currentRefreshToken = currentRefreshToken;
     }
 }

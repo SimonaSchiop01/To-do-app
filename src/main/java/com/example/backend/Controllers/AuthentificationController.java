@@ -9,15 +9,14 @@ import com.example.backend.Dtos.Authentification.RequestTokensDto;
 import com.example.backend.Repositories.UserLoginHistoryRepository;
 import com.example.backend.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 
 @RestController
 @RequestMapping("/authentification-controller")
+@CrossOrigin(origins = "http://localhost:5173", maxAge = 3600, allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST})
 public class AuthentificationController {
     @Autowired
     private UserRepository userRepository;
@@ -26,7 +25,7 @@ public class AuthentificationController {
     private UserLoginHistoryRepository userLoginHistoryRepository;
 
     @PostMapping("GeneratePairsOfTokens")
-    public BearerTokensDtoResponse loginUser(RequestTokensDto requestTokensDto) {
+    public BearerTokensDtoResponse loginUser(@RequestBody RequestTokensDto requestTokensDto) {
         User user = this.userRepository.findByEmailAndPassword(requestTokensDto.getEmail(), requestTokensDto.getPassword()).orElse(null);
         if(user == null ) {
             return new BearerTokensDtoResponse("","","Wrong credentials or inactive account",401);
