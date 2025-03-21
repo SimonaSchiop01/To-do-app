@@ -1,6 +1,7 @@
 package com.example.backend.Controllers;
 
 import com.example.backend.Domains.User;
+import com.example.backend.Dtos.Authentification.UserCreateRequestDto;
 import com.example.backend.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +17,11 @@ public class UserController {
     private UserRepository userRepository;
 
     @PostMapping("create")
-    public User createUser(@RequestBody User user){
+    public User createUser(@RequestBody UserCreateRequestDto userCreateRequestDto){
+        User user = new User();
+        user.setEmail(userCreateRequestDto.getEmail());
+        user.setPassword(userCreateRequestDto.getPassword());
+        user.setUsername(userCreateRequestDto.getUsername());
         this.userRepository.save(user);
         return user;
     }

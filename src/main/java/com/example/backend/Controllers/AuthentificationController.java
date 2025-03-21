@@ -1,6 +1,7 @@
 package com.example.backend.Controllers;
 
 import com.example.backend.BussinesLogic.BearerTokensGenerator;
+import com.example.backend.Decorators.IAdminRights;
 import com.example.backend.Domains.User;
 import com.example.backend.Domains.UserLoginHistory;
 import com.example.backend.Dtos.Authentification.BearerTokensDtoResponse;
@@ -25,6 +26,7 @@ public class AuthentificationController {
     private UserLoginHistoryRepository userLoginHistoryRepository;
 
     @PostMapping("GeneratePairsOfTokens")
+    @IAdminRights
     public BearerTokensDtoResponse loginUser(@RequestBody RequestTokensDto requestTokensDto) {
         User user = this.userRepository.findByEmailAndPassword(requestTokensDto.getEmail(), requestTokensDto.getPassword()).orElse(null);
         if(user == null ) {
@@ -47,7 +49,7 @@ public class AuthentificationController {
     }
 
     @PostMapping("GenerateNewPairsOfTokens")
-    public BearerTokensDtoResponse refreshToken(RequestNewPairsOfTokens  requestNewPairsOfTokens) {
+    public BearerTokensDtoResponse refreshToken(@RequestBody RequestNewPairsOfTokens  requestNewPairsOfTokens) {
         UserLoginHistory userLoginHistory = this.userLoginHistoryRepository.findByCurrentRefreshToken(requestNewPairsOfTokens.getRefreshToken()).orElse(null);
        if(userLoginHistory == null) {
            User newUser = this.userRepository.findByEmail(requestNewPairsOfTokens.getUserEmail()).orElse(null);
@@ -64,7 +66,7 @@ public class AuthentificationController {
 
         userLoginHistory.setCurrentRefreshToken(newRefreshToken);
         userLoginHistory.setCurrentAccessToken(newAccessToken);
-       userLoginHistoryRepository.save(userLoginHistory);
+        userLoginHistoryRepository.save(userLoginHistory);
         BearerTokensDtoResponse response = new BearerTokensDtoResponse(newAccessToken,newRefreshToken,"Refresh successfully",200);
         return response;
     }
